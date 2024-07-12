@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Sayuran</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- data-aos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+      body {
+        background: #f2f2f2;
+      }
+        .jumbotron {
+            background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bg.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 30px;
+        }
+        .promo-banner {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            z-index: 99;
+        }
+        .produk-img {
+            overflow: hidden;
+        }
+        .produk-img img {
+            transition: transform 0.5s ease;
+        }
+        .produk-img:hover img {
+            transform: scale(1.1);
+        }
+        .produk-card {
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+        .produk-card:hover{
+            transform: scale(1.1);
+        }
+        span {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand" href="home.html">SayurLokal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">Beranda <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="produk.html">Produk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keranjang.html">Keranjang</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tentang.html">Tentang Kami</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cari Produk" aria-label="Search" id="searchInput">
+        </form>
+        <a class="btn bg-danger text-light" href="index.html">Keluar</a>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <h1 class="display-4" data-aos="fade-up">Aneka Sayur Mayur</h1>
+    <p class="lead" data-aos="fade-up">daftar produk sayuran yang tersedia di toko kami.</p>
+    <hr class="my-4" data-aos="fade-up">
+    <a class="btn btn-primary btn-lg" data-aos="fade-up" style="background-color: orange; border-color: orange;" href="#cardContainer" role="button">Belanja Sekarang</a>
+</div>
+
+
+
+    <div class="container my-5 py-5" id="cardContainer">
+        <div class="row" id="productCards">
+            <!-- Card sayuran -->
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/bayam.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Bayam Segar</h5>
+                        <p class="card-text">Bayam segar dan berkualitas. Harga: Rp10,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Bayam Segar', 10000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img" >
+                    <img src="./image/wortel.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Wortel Segar</h5>
+                        <p class="card-text">Wortel segar dan berkualitas. Harga: Rp8,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Wortel Segar', 8000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/kubis.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Kubis Segar</h5>
+                        <p class="card-text">Kubis segar dan berkualitas. Harga: Rp12,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Kubis Segar', 12000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/tomat.jfif" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Tomat Merah</h5>
+                        <p class="card-text">Tomat segar dan berkualitas. Harga: Rp15,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Tomat Merah', 15000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/buncis.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Buncis Hijau</h5>
+                        <p class="card-text">Buncis segar dan berkualitas. Harga: Rp7,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Buncis Hijau', 7000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/labu.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Labu Kuning</h5>
+                        <p class="card-text">Labu segar dan berkualitas. Harga: Rp20,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Labu Kuning', 20000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/selada.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Selada Hijau</h5>
+                        <p class="card-text">Selada segar dan berkualitas. Harga: Rp10,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Selada Hijau', 10000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/parikam.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Paprika Merah</h5>
+                        <p class="card-text">Paprika segar dan berkualitas. Harga: Rp25,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Paprika Merah', 25000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/terong.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Terong Ungu</h5>
+                        <p class="card-text">Terong segar dan berkualitas. Harga: Rp18,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Terong Ungu', 18000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/kangkung.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Kangkung Segar</h5>
+                        <p class="card-text">Kangkung segar dan berkualitas. Harga: Rp6,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Kangkung Segar', 6000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card produk-img">
+                    <img src="./image/timun.jpg" class="card-img-top" alt="Gambar Sayuran">
+                    <div class="card-body">
+                        <h5 class="card-title">Timun Segar</h5>
+                        <p class="card-text">Timun segar dan berkualitas. Harga: Rp5,000 / kg</p>
+                        <button class="btn btn-primary" onclick="addToCart('Timun Segar', 5000)" style="background-color: orange; border-color: orange;">Tambahkan ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <footer class="bg-success text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <h5>Hubungi Kami</h5>
+                    <ul class="list-unstyled">
+                        <li>Jl. Kantil</li>
+                        <li>Kota Majenang, Cilacap</li>
+                        <li>Email: dajah9314@gmail.com</li>
+                        <li>Telepon: +62 812-2517-2900</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Ikuti Kami</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com/inspirasiweb.id?igsh=MXVub3dwcm81aXlwbw==" class="text-white"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Tentang Kami</h5>
+                    <p>Kami menyediakan aneka macam sayur-mayur segar, yang pasti diambil langsung dari kebun.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-warning" title="Go to top" data-aos="fade-left"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        AOS.init();
+
+        // Show or hide the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+    <script>
+        function addToCart(productName, price) {
+            var quantity = prompt('Masukkan jumlah sayuran yang ingin Anda beli:');
+            if (quantity === null || quantity === '' || isNaN(quantity)) {
+                alert('Masukkan jumlah sayuran yang valid.');
+                return;
+            }
+            var cartItem = {
+                name: productName,
+                price: price,
+                quantity: parseInt(quantity)
+            };
+            // Simpan ke localStorage
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            document.getElementById('cartMessage').textContent = productName + ' telah ditambahkan ke keranjang dengan harga Rp' + price * quantity;
+        }
+        function searchProducts() {
+        const searchText = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.querySelectorAll('.card');
+        products.forEach(product => {
+            const productName = product.querySelector('.card-title').innerText.toLowerCase();
+            if (productName.includes(searchText)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

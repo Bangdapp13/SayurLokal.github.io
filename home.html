@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Sayuran Online</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- data-aos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+      body {
+        background: #f2f2f2;
+      }
+        .jumbotron {
+            background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bg.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+        .product-card {
+            margin-bottom: 30px;
+        }
+        .promo-banner {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            z-index: 99;
+        }
+        .produk-img {
+            overflow: hidden;
+        }
+        .produk-img img {
+            transition: transform 0.5s ease;
+        }
+        .produk-img:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="promo-banner">
+    <p>Promo Spesial: Diskon 10% untuk Pembelian Diatas Rp100.000,- | <a href="detail.html">Lihat Detail</a></p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand" href="home.html">SayurLokal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home.html">Beranda <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="produk.html">Produk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="keranjang.html">Keranjang</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tentang.html">Tentang Kami</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cari Produk" aria-label="Search" id="searchInput">
+        </form>
+        <a class="btn bg-danger text-light" href="index.html">Keluar</a>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <h1 class="display-4" data-aos="fade-up">Selamat datang di Toko Sayuran Online</h1>
+    <p class="lead" data-aos="fade-up">Dapatkan berbagai macam sayuran segar langsung di antar ke rumah Anda.</p>
+    <hr class="my-4" data-aos="fade-up">
+    <p data-aos="fade-up">Temukan sayuran terbaik untuk hidup sehat Anda.</p>
+    <a class="btn btn-primary btn-lg" data-aos="fade-up" style="background-color: orange; border-color: orange;" href="#cardContainer" role="button">Belanja Sekarang</a>
+</div>
+ 
+
+<div class="container my-5 py-5" id="cardContainer">
+    <div class="row">
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/bayam.jpg" class="card-img-top" alt="Gambar Sayuran 1">
+                <div class="card-body">
+                    <h5 class="card-title">Bayam Segar</h5>
+                    <p class="card-text">Bayam segar dan berkualitas, kaya akan zat besi dan antioksidan yang baik untuk kesehatan Anda.</p>
+                    <p class="card-text">Harga: Rp10,000 / kg</p>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/wortel.jpg" class="card-img-top" alt="Gambar Sayuran 2">
+                <div class="card-body">
+                    <h5 class="card-title">Wortel Segar</h5>
+                    <p class="card-text">Wortel segar dan berkualitas, kaya akan beta-karoten yang baik untuk kesehatan mata Anda.</p>
+                    <p class="card-text">Harga: Rp8,000 / kg</p>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/kubis.jpg" class="card-img-top" alt="Gambar Sayuran 3">
+                <div class="card-body">
+                    <h5 class="card-title">Kubis</h5>
+                    <p class="card-text">Kubis segar dan berkualitas, kaya akan vitamin C yang baik untuk sistem imun Anda.</p>
+                    <p class="card-text">Harga: Rp12,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/tomat.jfif" class="card-img-top" alt="Gambar Sayuran 4">
+                <div class="card-body">
+                    <h5 class="card-title">Tomat Merah</h5>
+                    <p class="card-text">Tomat merah segar dan berkualitas, kaya akan vitamin C dan likopen.</p>
+                    <p class="card-text">Harga: Rp15,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/buncis.jpg" class="card-img-top" alt="Gambar Sayuran 5">
+                <div class="card-body">
+                    <h5 class="card-title">Buncis Hijau</h5>
+                    <p class="card-text">Buncis hijau segar dan berkualitas, kaya akan serat dan vitamin K.</p>
+                    <p class="card-text">Harga: Rp7,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/labu.jpg" class="card-img-top" alt="Gambar Sayuran 6">
+                <div class="card-body">
+                    <h5 class="card-title">Labu Kuning</h5>
+                    <p class="card-text">Labu kuning segar dan berkualitas, kaya akan beta-karoten dan serat.</p>
+                    <p class="card-text">Harga: Rp20,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/brokoli.jpg" class="card-img-top" alt="Gambar Sayuran 7">
+                <div class="card-body">
+                    <h5 class="card-title">Brokoli</h5>
+                    <p class="card-text">Brokoli segar dan berkualitas, kaya akan vitamin K dan antioksidan.</p>
+                    <p class="card-text">Harga: Rp18,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/terong.jpg" class="card-img-top" alt="Gambar Sayuran 8">
+                <div class="card-body">
+                    <h5 class="card-title">Terong Ungu</h5>
+                    <p class="card-text">Terong ungu segar dan berkualitas, kaya akan serat dan antioksidan.</p>
+                    <p class="card-text">Harga: Rp12,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="fade-up">
+            <div class="card produk-img">
+                <img src="./image/bayamm.jpg" class="card-img-top" alt="Gambar Sayuran 9">
+                <div class="card-body">
+                    <h5 class="card-title">Bayam Merah</h5>
+                    <p class="card-text">Bayam merah segar dan berkualitas, kaya akan zat besi dan antioksidan yang baik untuk kesehatan Anda.</p>
+                    <p class="card-text">Harga: Rp14,000 / kg</p>
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-12 text-center" data-aos="fade-up">
+            <a href="produk.php" class="btn btn-success btn-lg">Lihat Semua Produk</a>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-success text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" >
+                <h5>Hubungi Kami</h5>
+                <ul class="list-unstyled">
+                    <li>Jl. Kantil</li>
+                    <li>Kota Majenang, Cilacap</li>
+                    <li>Email: dajah9314@gmail.com</li>
+                    <li>Telepon: +62 812-2517-2900</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Ikuti Kami</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.instagram.com/inspirasiweb.id?igsh=MXVub3dwcm81aXlwbw==" class="text-white"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Tentang Kami</h5>
+                <p>Kami menyediakan aneka macam sayur-mayur segar, yang pasti diambil langsung dari kebun.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Back to Top Button -->
+<button id="back-to-top" class="btn btn-warning" title="Go to top" data-aos="fade-left"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    AOS.init();
+
+    // Show or hide the button
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    document.getElementById('back-to-top').addEventListener('click', function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+</script>
+<script>
+    function searchProducts() {
+        const searchText = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.querySelectorAll('.product-card');
+        products.forEach(product => {
+            const productName = product.querySelector('.card-title').innerText.toLowerCase();
+            if (productName.includes(searchText)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

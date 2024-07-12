@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- data-aos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            z-index: 99;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .produk-img {
+            overflow: hidden;
+        }
+        .produk-img img {
+            transition: transform 0.5s ease;
+        }
+        .produk-img:hover img {
+            transform: scale(1.1);
+        }
+        .produk-card {
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+        .produk-card:hover{
+            transform: scale(1.1);
+        }
+        span {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <a class="navbar-brand" href="home.html">SayurLokal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Beranda <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produk.html">Produk</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="keranjang.html">Keranjang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tentang.html">Tentang Kami</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Cari Produk" aria-label="Search" id="searchInput">
+            </form>
+            <a class="btn bg-danger text-light" href="index.html">Keluar</a>
+        </div>
+    </nav>
+    
+
+<div class="container mt-4" data-aos="fade-up">
+        <h1 class="display-5 fw-bold">Keranjang <span>Produk</span></h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama Produk</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Jumlah (kg)</th>
+                    <th scope="col">Total Harga</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="cartItems">
+                <!-- Data produk akan ditampilkan di sini -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><strong>Total Keseluruhan</strong></td>
+                    <td id="totalPrice"></td>
+                    <td><button class="btn btn-success" onclick="checkout()">Pembayaran</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        // Ambil data dari localStorage
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartItems = document.getElementById('cartItems');
+        var totalPriceCell = document.getElementById('totalPrice');
+
+        // Fungsi untuk menghapus item dari keranjang
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        // Fungsi untuk checkout
+        function checkout() {
+            var total = 0;
+            cart.forEach(function(item) {
+                total += item.price * item.quantity;
+            });
+            var confirmation = confirm('Terima kasih telah berbelanja di toko website kami. Total pembayaran Anda adalah Rp' + total + '. Apakah Anda yakin ingin melanjutkan pembayaran?');
+            if (confirmation) {
+                alert('Terima kasih telah melakukan pembayaran. Pesanan Anda akan segera diproses.');
+                localStorage.removeItem('cart');
+                renderCart();
+                // Arahkan kembali ke halaman utama setelah beberapa detik
+                setTimeout(function() {
+                    window.location.href = 'home.php';
+                }, 2000);
+            }
+        }
+
+        // Tampilkan data di tabel
+        function renderCart() {
+            cartItems.innerHTML = '';
+            var total = 0;
+            cart.forEach(function(item, index) {
+                var row = document.createElement('tr');
+                var totalPrice = item.price * item.quantity;
+                total += totalPrice;
+                row.innerHTML = `
+                    <th scope="row">${index + 1}</th>
+                    <td>${item.name}</td>
+                    <td>Rp${item.price}</td>
+                    <td>${item.quantity}</td>
+                    <td>Rp${totalPrice}</td>
+                    <td><button class="btn btn-danger" onclick="removeItem(${index})">Hapus</button></td>
+                `;
+                cartItems.appendChild(row);
+            });
+            totalPriceCell.textContent = 'Rp' + total;
+        }
+
+        renderCart();
+    </script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-warning" title="Go to top" data-aos="fade-left"><i class="fas fa-arrow-up"></i></button>
+    <!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        AOS.init();
+
+        // Show or hide the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>
